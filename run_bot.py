@@ -17,7 +17,7 @@ import asyncio
 # the bot responds to commands beginning with "!"
 # input your own token after creating a bot on discord
 bot = commands.Bot(command_prefix = '!')
-TOKEN = 'NTcxMzEzMzk3NDU1NTE5NzQ1.XML9ng.sPSlZjobZhkNRUAmt5J9Hs5Dz30'
+TOKEN = TOKEN	# fill this in with your own bot's token
 
 # tell users that someone else is using the bot if the command is on cooldown
 # else, raise the error
