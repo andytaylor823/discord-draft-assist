@@ -282,6 +282,8 @@ async def delpick(ctx, *args):
 	myargs = f.get_args(args)
 	if len(myargs) != 2:
 		await ctx.send(em.not_enough_args_delpick)
+		delpick.reset_cooldown(ctx)
+		return
 	rd, which = myargs
 	
 	# check for otherwise bad input
@@ -308,6 +310,7 @@ async def delpick(ctx, *args):
 			return
 	except asyncio.TimeoutError:
 		await ctx.send("Your request timed out. Please try again.")
+		delpick.reset_cooldown(ctx)
 		return
 	
 	# if they confirmed it, apply the deletion and send a confirmation mesage
